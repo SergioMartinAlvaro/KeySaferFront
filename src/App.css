@@ -1,5 +1,15 @@
+body {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  outline: 0;
+  outline-offset: 0;
+}
+
 .App {
   text-align: center;
+  position: relative;
 }
 
 .App-logo {
