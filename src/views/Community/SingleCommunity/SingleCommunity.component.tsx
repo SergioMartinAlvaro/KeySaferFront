@@ -41,7 +41,7 @@ const SingleCommunity = () => {
     },[])
 
     const getCurrentCommunity = () => {
-        axios.post('/communities/get-community-id', {id: params.idComunidad})
+        axios.post(process.env.REACT_APP_API + '/api/communities/get-community-id', {id: params.idComunidad})
         .then(res => {
             setCommunity(res.data[0]);
             setCurrentCommunity(res.data[0]);

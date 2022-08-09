@@ -7,7 +7,7 @@ const login = async (username: string, password: string) => {
     };
     let response = {};
 
-    await axios.post('/user/get-auth-user', userObject)
+    await axios.post(process.env.REACT_APP_API + '/api/user/get-auth-user', userObject)
     .then(res =>  {
         if(res.status === 200) {
             response = res;

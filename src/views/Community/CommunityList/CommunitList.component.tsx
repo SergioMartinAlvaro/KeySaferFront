@@ -19,7 +19,7 @@ const CommunityList = () => {
     }, [showModal])
 
     const GetAllCommunities = async () => {
-        axios.post('/communities/get-communities-cityId', {ciudadId: params.idCiudad})
+        axios.post(process.env.REACT_APP_API + '/api/communities/get-communities-cityId', {ciudadId: params.idCiudad})
         .then(res => {
            setCommunities(res.data);
         })
@@ -41,7 +41,7 @@ const CommunityList = () => {
     }, []);
 
     const deleteCommunitiy = async (id: string) => {
-        axios.delete('/communities/delete-community', {data: {id: id}})
+        axios.delete(process.env.REACT_APP_API + '/api/communities/delete-community', {data: {id: id}})
         .then(res => {
             GetAllCommunities();
         });

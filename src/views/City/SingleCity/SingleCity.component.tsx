@@ -44,7 +44,7 @@ const SingleCity = () => {
     },[])
 
     const getCurrentCity = () => {
-        axios.post('/cities/get-city-id', {id: params.idCiudad})
+        axios.post(process.env.REACT_APP_API + '/api/cities/get-city-id', {id: params.idCiudad})
         .then(res => {
             setCity(res.data[0]);
             setCurrentCity(res.data[0]);

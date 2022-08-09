@@ -35,7 +35,7 @@ const AddCommunity = () => {
             numerocalle: streetNumber,
             ciudadId: currentCity.id
         }
-                axios.post('/communities/insert-community', usuario)
+                axios.post(process.env.REACT_APP_API + '/api/communities/insert-community', usuario)
                 .then(res => {
                     setMessage('Comunidad introrucida con exito');
                 })

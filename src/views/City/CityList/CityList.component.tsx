@@ -21,7 +21,7 @@ const CityList = () => {
     }, [showModal])
 
     const GetAllCities = async () => {
-        axios.get('/cities/get-all-cities')
+        axios.get(process.env.REACT_APP_API + '/api/cities/get-all-cities')
         .then(res => {
             
            setCities(res.data);
@@ -32,7 +32,7 @@ const CityList = () => {
     };
 
     const deleteCity = async (id: string) => {
-        axios.delete('/cities/delete-city', {data: {id: id}})
+        axios.delete('/api/cities/delete-city', {data: {id: id}})
         .then(res => {
             console.log('OK');
             GetAllCities();

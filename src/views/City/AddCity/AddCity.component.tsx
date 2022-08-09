@@ -32,7 +32,7 @@ const AddCity = () => {
             nombre: name,
         }
         
-        await useExists('/cities/get-city', {nombre: name})
+        await useExists(process.env.REACT_APP_API + '/api/cities/get-city', {nombre: name})
         .then((res) => {
             
             if(res?.data.length === 0) {
