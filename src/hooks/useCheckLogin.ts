@@ -5,6 +5,6 @@ import { useThemeContext } from '../context/AppContext';
 
 export const useCheckLogin = (user?:any) => {
     const element = localStorage.getItem('userLogged');
-    const isUserLogged = element && JSON.parse(element).googleId === process.env.REACT_APP_GOOGLEID;
+    const isUserLogged = element && JSON.parse(element).password === process.env.REACT_APP_GOOGLEID;
     return isUserLogged;
 }

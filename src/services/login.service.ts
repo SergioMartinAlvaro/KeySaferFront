@@ -5,15 +5,17 @@ const login = async (username: string, password: string) => {
         username: username,
         password: password
     };
+    let response = {};
 
-    axios.post('/user/get-auth-user', userObject)
+    await axios.post('/user/get-auth-user', userObject)
     .then(res =>  {
         if(res.status === 200) {
-            return res.data;
+            response = res;
         } else {
-            return res.data;
+           response = res;
         }
     })
+    return response;
 }
 
 export {
