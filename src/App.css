@@ -1,7 +1,6 @@
 body {
   min-height: 100vh;
-  width: 100%;
-  max-width: 100%;
+  width: fit-content;
   box-sizing: border-box;
   outline: 0;
   outline-offset: 0;
