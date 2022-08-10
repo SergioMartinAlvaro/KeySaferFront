@@ -36,7 +36,7 @@ const AddCity = () => {
         .then((res) => {
             
             if(res?.data.length === 0) {
-                axios.post('/cities/insert-city', usuario)
+                axios.post(process.env.REACT_APP_API +  '/api/cities/insert-city', usuario)
                 .then(res => {
                     setMessage('Ciudad introrucida con exito');
                     navigate(-1);
