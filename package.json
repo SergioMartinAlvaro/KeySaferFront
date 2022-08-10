@@ -1,7 +1,7 @@
 {
   "name": "cliente",
   "version": "0.1.0",
-  "homepage": "https://github.com/SergioMartinAlvaro/KeySaferFront",
+  "homepage": "https://sergiomartinalvaro.github.io/KeySaferFront/",
   "private": true,
   "dependencies": {
     "@fontsource/roboto": "^4.5.7",
