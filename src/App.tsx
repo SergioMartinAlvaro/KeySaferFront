@@ -21,22 +21,12 @@ const clientId = '818764501307-7r9r4easlgfo00vc036uur3dge96b21d.apps.googleuserc
 
 function App() {
   const { setUser, user, showModal, setShowModal } = useThemeContext();
-  useEffect(() => {
-    function start() {
-      gapi.client.init({
-        clientId: clientId,
-        scope: ""
-      })
-    };
-    gapi.load(`client:auth2`, start);
-  }, [])
-
   return (
     <div className="App">
       <ThemeProvider>
         <BrowserRouter>
         
-        {useCheckLogin() && <Menu />}
+        {user() && <Menu />}
           <Routes>
             <Route path='/' element={<Login />}></Route>
             <Route path='/home' element={<CityList />}></Route>
