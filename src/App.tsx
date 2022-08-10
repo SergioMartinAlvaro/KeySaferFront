@@ -26,7 +26,7 @@ function App() {
       <ThemeProvider>
         <BrowserRouter>
         
-        {user() && <Menu />}
+        {user && <Menu />}
           <Routes>
             <Route path='/' element={<Login />}></Route>
             <Route path='/home' element={<CityList />}></Route>
