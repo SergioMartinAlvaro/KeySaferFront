@@ -29,40 +29,47 @@
         }
     }
 
-    &__button {
-        button {
-            width: 300px;
-            height: 60px;
-            background-color: $secondary-color!important;
-            color: $white-color!important;
-            font-size: 20px!important;
-            text-align: center!important;
-            font-weight: bolder!important;
-            font-family: 'Roboto';
-            display: flex;
+    &__error {
+        color: red;
+        margin-top: spacing();
+        font-size: spacing();
+    }
 
-            &:hover {
-                div {
-                    transform: rotate(0deg);
-                    transition: .2s ease-in;
-                }
-            }
-
-            div {
-                width: 80px!important;
-                border: 5px solid $secondary-color;
-                transform: rotate(-20deg);
-                height: 60px!important;
-                transition: .2s ease-in;
-                @include flexBox(row, center, center);
-            }
-            
-            span {
-                width: 100%;
-            }
-        }
+    &__input {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        width: 100%;
+        max-width: 476px;
+        height: spacing(extra);
+        font-size: 16px;
+        border: 2px solid rgba($secondary-color, 1);
+        padding: 8px;
+        margin-bottom: spacing();
+        background: white;
         &Container {
+            width: 100%;
+            @include flexBox(column, center, center);
+        }
+    }
 
+    &__button {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        width: 100%;
+        height: spacing(big);
+        font-size: 24px;
+        background: $secondary-color;
+        outline: none;
+        border: none;
+        color: white;
+
+        &:hover {
+            transition: .2s ease-in-out;
+            background: rgba($secondary-color, .9);
+            cursor: pointer;
+        }
+              
+        &Container {
+            width: 100%;
+            max-width: 476px;
         }
     }
 }

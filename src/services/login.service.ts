@@ -12,7 +12,7 @@ const login = async (username: string, password: string) => {
         if(res.status === 200) {
             response = res;
         } else {
-           response = res;
+           response = {message: 'Usuario/contraseña incorrecto'};
         }
     })
     return response;
