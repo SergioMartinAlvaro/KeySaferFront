@@ -6,6 +6,7 @@ import { Axios } from '../../../config';
 import { useThemeContext } from '../../../context/AppContext';
 import { useCheckLogin } from '../../../hooks/useCheckLogin';
 import { useExists } from '../../../hooks/useExists';
+import './AddCity.scss';
 
 
 const AddCity = () => {
@@ -51,23 +52,24 @@ const AddCity = () => {
     };
 
     return(
-        <div className="container">
-            <div className="row">
-                <h2 className="mt-4"> Añadir nueva ciudad</h2>
-                <div className="row">
-                    <div className="col-sm-6 offset-3">
-                        <div className="mb-3">
-                            <label htmlFor="nombre" className="form-label">
-                                Nombre
-                            </label>
-                            <input type="text" className="form-control" value={name} 
+        <div className="addCity">
+            <div className="addCity__container">
+            <div className='addCity__imageContainer'>
+                    <h2 className='addCity__title'>
+                        Añadir Ciudad
+                    </h2>
+                </div>
+                <div className='addCity__listContainer'>
+                    <div className="addCity__inputContainer">
+                            <input type="text" className="addCity__input" value={name} placeholder="Nombre de la ciudad"
                                 onChange={(e) => setName(e.target.value)}></input>
-                        </div>
-                        <button onClick={AgregarUsuario} className="btn btn-success">Guardar Ciudad</button>
-                        <div>
+                    </div>
+                </div>
+                <div className='addCity__addButtonContainer'>
+                    <button onClick={AgregarUsuario} className="addCity__addButton">Guardar Ciudad</button>
+                        <div className='addCity__message'>
                             {message !== '' ? message : ''}
                         </div>
-                    </div>
                 </div>
             </div>
         </div>

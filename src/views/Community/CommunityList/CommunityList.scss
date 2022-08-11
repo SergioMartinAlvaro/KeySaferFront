@@ -26,30 +26,51 @@
       }
 
       &__list {
-        -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0.66); 
-        box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0.66);
-        width: 400px;
-        height: 60px;
-        background: rgba(255,255,255,1);
-        border-radius: 4px;
-        margin-bottom: spacing();
+        margin-bottom: spacing(normal);
         @include flexBox(row, center, center);
-        justify-content: initial;
-        position: relative;
-        padding: 0 spacing();
+        text-align: left;
+        border-bottom: 2px solid $secondary-color;
+        padding: spacing(normal);
+        justify-content: start;
+
+        &Container {
+          height: 360px;
+          width: 100%;
+          max-height: 70%;
+          padding: spacing();
+          overflow-y: auto
+        }
+
+      }
+
+      &__city {
+        min-width: 200px;
       }
 
       &__button {
-          &Container {
-              @include flexBox(row, center, center);
-              position: absolute;
-              right: spacing();
-          }
+        color: white;
+        background: $secondary-color;
+        border-radius: 5px;
+        border: none;
+        height: 40px;
+        width: 40px;
+        margin-top: spacing(small);
+        &Container {
+          width: 100%;
+            @include flexBox(row, center, center);
+            justify-content: end;
+        }
 
-          &:first-of-type {
-              margin-left: 12px;
-          }
-      }
+        &:hover {
+          background: rgba($secondary-color, .9);
+          transition: .2s ease-in-out;;
+        }
+
+        &:first-of-type {
+            margin-left: 12px;
+        }
+    }
+
 
       &__name {
           @include fontGenerate(Text);

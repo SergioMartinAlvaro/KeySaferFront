@@ -49,7 +49,7 @@ const AddDoor = () => {
         formData.append('Nombre', doorName);
         formData.append('Comentarios', doorComments);
         formData.append('Comunidad_id', currentCommunity.id);
-                axios.post('/door/insert-door', formData)
+                axios.post(process.env.REACT_APP_API + '/api/door/insert-door', formData)
                 .then(res => {
                     setMessage('Puerta introrucida con exito');
                     navigate(-1);

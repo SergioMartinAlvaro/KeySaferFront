@@ -8,10 +8,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
 import Modal from '../../../components/Modal/Modal.component';
 
-const CommunityList = () => {
+const CommunityList = (searchParam:any) => {
     const params = useParams();
     const { setCommunities, communities, user, currentCity, showModal, setShowModal } = useThemeContext();
     const navigate = useNavigate();
+    const [searchCommunities, setSearchCommunities] = useState<any[]>([])
     const [showConfirmation, setShowConfirmation] = useState(showModal);
 
     useEffect(() => {
@@ -47,10 +48,24 @@ const CommunityList = () => {
         });
     };
 
+    const searchQuery = (value:string) => {
+        if(value) {
+           let query = communities.filter(community => community.nombrecalle.indexOf(value) != -1 );
+           setSearchCommunities(query);
+        } else {
+            setSearchCommunities(communities);
+        }
+    }
+
+
+    useEffect(() => {
+        searchQuery(searchParam.searchParam)
+    }, [searchParam]);
+
     return (
-        <div>
-            {(communities && communities.length) && <div className="communityList">
-                    {communities.map(community =>
+        <div className='communityList__container'>
+            {(searchCommunities && searchCommunities.length) && 
+                    searchCommunities.map(community =>
                         <div className="communityList__list">
                             <Link to={`/community/${community.id}`}>
                                 <div className="communityList__city">
@@ -74,8 +89,8 @@ const CommunityList = () => {
                     </Modal>
                 }
                         </div>
-                    )}
-                </div>}
+                    )
+                }
         </div>
     )
 }
