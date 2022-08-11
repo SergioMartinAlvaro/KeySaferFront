@@ -7,11 +7,11 @@ import './SingleDoor.scss';
 
 
 export interface Door {
-    Id: string,
-    Nombre: string,
-    Comentarios: string,
-    Foto: string,
-    Comunidad_id: string,
+    id: string,
+    nombre: string,
+    comentarios: string,
+    foto: string,
+    comunidad_id: string,
     created_at: any,
     updated_at: any
 }
@@ -50,7 +50,7 @@ const SingleDoor = () => {
     },[])
 
     const getCurrentCommunity = () => {
-        axios.post('/door/get-door-id', {id: params.idDoor})
+        axios.post(process.env.REACT_APP_API + '/api/door/get-door-id', {id: params.idDoor})
         .then(res => {
             setDoor(res.data[0]);
         })
@@ -60,11 +60,10 @@ const SingleDoor = () => {
     }
     return(
         <div className="singleCommunity">
-            <h2 className="singleCommunity__title">Puerta {door.Nombre} en {currentCommunity.nombrecalle} </h2>
-            <p className="singleCommunity__subtitle">{door.Comentarios}</p>
-            {door.Foto && <img className="singleCommunity__subtitle" src={`http://localhost:5000/${door.Foto.substring(door.Foto.lastIndexOf('/') + 1)}`} />}
+            <h2 className="singleCommunity__title">Puerta {door.nombre} en {currentCommunity.nombrecalle} </h2>
+            <p className="singleCommunity__subtitle">{door.comentarios}</p>
+            {door.foto && <img className="singleCommunity__subtitle" src={`https://keysafer.herokuapp.com/${door.foto.substring(door.foto.lastIndexOf('/') + 1)}`} />}
         </div>
     )
 }
-
 export default SingleDoor;

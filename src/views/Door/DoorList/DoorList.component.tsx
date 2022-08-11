@@ -13,7 +13,7 @@ const DoorList = () => {
 
     const GetAllDoors = async () => {
         console.log(params);
-        axios.post('/door/get-doors-comunidadId', {communityId: params.idComunidad})
+        axios.post(process.env.REACT_APP_API + '/api/door/get-doors-comunidadId', {communityId: params.idComunidad})
         .then(res => {
             console.log(res.data)
            setDoors(res.data);
@@ -47,18 +47,18 @@ const DoorList = () => {
             {doors && <div>
                     {doors.map(door =>
                         <div className="cityList__list">
-                            <Link to={`/door/${door.Id}`}>
+                            <Link to={`/door/${door.id}`}>
                                 <div className="cityList__city">
-                                    {door.Nombre}
+                                    {door.nombre}
                                 </div>
                             </Link> 
                             <div className="cityList__buttonContainer">
-                            <Link to={`/edit-door/${door.Id}`}>
+                            <Link to={`/edit-door/${door.id}`}>
                                 <button type="button" className="cityList__button cityList__button--edit">
                                     Editar
                                 </button>
                             </Link> 
-                            <button onClick={() => deleteDoor(door.Id)} type="button" className="cityList__button cityList__button--edit">
+                            <button onClick={() => deleteDoor(door.id)} type="button" className="cityList__button cityList__button--edit">
                                     Eliminar
                                 </button>
                             </div>
