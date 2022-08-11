@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/KeySaferFront/static/css/main.26eb03d2.css",
-    "main.js": "/KeySaferFront/static/js/main.b0811408.js",
+    "main.css": "/KeySaferFront/static/css/main.8741c5ef.css",
+    "main.js": "/KeySaferFront/static/js/main.5126684a.js",
     "static/js/787.506dd8ed.chunk.js": "/KeySaferFront/static/js/787.506dd8ed.chunk.js",
     "static/media/city.jpg": "/KeySaferFront/static/media/city.24f6c1d53f7fe9b29ef3.jpg",
     "static/media/door.jpg": "/KeySaferFront/static/media/door.679d2703ee3112fe83cb.jpg",
@@ -16,12 +16,12 @@
     "static/media/roboto-greek-ext-400-normal.woff2": "/KeySaferFront/static/media/roboto-greek-ext-400-normal.169619821ea93019d1bb.woff2",
     "static/media/logo.svg": "/KeySaferFront/static/media/logo.9c04d74952ed6a59ea1345467c90b417.svg",
     "index.html": "/KeySaferFront/index.html",
-    "main.26eb03d2.css.map": "/KeySaferFront/static/css/main.26eb03d2.css.map",
-    "main.b0811408.js.map": "/KeySaferFront/static/js/main.b0811408.js.map",
+    "main.8741c5ef.css.map": "/KeySaferFront/static/css/main.8741c5ef.css.map",
+    "main.5126684a.js.map": "/KeySaferFront/static/js/main.5126684a.js.map",
     "787.506dd8ed.chunk.js.map": "/KeySaferFront/static/js/787.506dd8ed.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.26eb03d2.css",
-    "static/js/main.b0811408.js"
+    "static/css/main.8741c5ef.css",
+    "static/js/main.5126684a.js"
   ]
 }
